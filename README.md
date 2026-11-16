@@ -68,6 +68,7 @@ graph LR
 
 To run this app with your own backend, create a free project on [Supabase](https://supabase.com/) and run the following SQL in the SQL Editor to set up the required tables and Row Level Security (RLS):
 
+```sql
     -- ============================================================================
     -- 1. PROFILES TABLE & AUTH TRIGGER
     -- ============================================================================
@@ -187,6 +188,7 @@ To run this app with your own backend, create a free project on [Supabase](https
     on public.reviews for select
     to authenticated
     using (auth.uid() = user_id);
+```
 
 <a id="-getting-started"></a>
 
@@ -194,16 +196,20 @@ To run this app with your own backend, create a free project on [Supabase](https
 
 ### 1. Clone & Install
 
-    git clone [https://github.com/yakuya00/vocabs.git](https://github.com/yakuya00/vocabs.git)
-    cd vocabs
-    npm install
+```bash
+git clone https://github.com/yakuya00/vocabs
+cd vocabs
+npm install
+```
 
 ### 2. Configure Environment Variables
 
 Create a `.env` file in the root directory:
 
-    VITE_SUPABASE_URL=[https://your-project-id.supabase.co](https://your-project-id.supabase.co)
-    VITE_SUPABASE_ANON_KEY=your-anon-public-key
+```dotenv
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-public-key
+```
 
 ### 3. Run Locally
 
